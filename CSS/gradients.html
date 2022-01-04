@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS gradients</title>
+	<style>
+		#grad{
+			width: 500px;
+			height: 100px;
+			background: linear-gradient(red,orange);
+		}
+		.grad1{
+			width: 500px;
+			height: 100px;
+			background: linear-gradient(to right,pink,red);
+		}
+		.grad2{
+			width: 500px;
+			height: 100px;
+			background: linear-gradient(to bottom right,blue,white);
+		}
+		.grad3{
+			width: 500px;
+			height: 100px;
+			background: linear-gradient(180deg,white,pink);
+		}
+		.grad4{
+			width: 500px;
+			height: 100px;
+			background: repeating-linear-gradient(red 5%,yellow 10%,orange 20%);
+		}
+		.rainbow{
+			width: 500px;
+			height: 150px;
+			background: linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet);
+		}
+		#rad{
+			width: 500px;
+			height: 100px;
+			background: radial-gradient(orange,yellow,red);
+		}
+		#rad1{
+			width: 500px;
+			height: 500px;
+			background: radial-gradient(circle,blue,skyblue,violet);
+		}
+		#rad2{
+			width: 500px;
+			height: 300px;
+			background: radial-gradient(closest-side at 55% 60%,red,orange,blue);
+		}
+		.conic{
+			width: 200px;
+			height: 200px;
+			background: conic-gradient(red,yellow,green);
+		}
+		.conic1{
+			width: 200px;
+			height: 200px;
+			background: conic-gradient(blue,yellow,black,violet,orange,red);
+		}
+		.conic2{
+			width: 200px;
+			height: 200px;
+			background: conic-gradient(blue 40deg,red 80deg,violet 140deg);
+		}
+	</style>
+</head>
+<body>
+	<p>Top to Bottom</p>
+	<div id="grad"></div><br>
+	<p>Left to Right</p>
+	<div class="grad1"></div><br>
+	<p>To Diagonal</p>
+	<div class="grad2"></div><br>
+	<p>Using angles</p>
+	<div class="grad3"></div><br>
+	<p>Repeating Linear Gradient</p>
+	<div class="grad4"></div><br>
+	<p>Rainbow Background</p>
+	<div class="rainbow"></div>
+	<h3>Radial Gradients</h3>
+	<p>It is defined by its center.For create a radial use atleast two color stops.</p>
+	<div id="rad"></div>
+	<p>Shape</p>
+	<div id="rad1"></div>
+	<p>Different Size Keywords</p>
+	<div id="rad2"></div><br>
+	<h2>Conic Gradients</h2>
+	<p>It is a gradient with color transition rotated around a center point.</p>
+	<div class="conic"></div>
+	<p>Six Colors</p>
+	<div class="conic1"></div>
+	<p>With Degree</p>
+	<div class="conic2"></div>
+</body>
+</html>

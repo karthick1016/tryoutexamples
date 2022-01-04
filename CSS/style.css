@@ -1,0 +1,67 @@
+/*.text1::after{
+	content: " Not Boring";
+	color: blue;
+}
+.text2::after{
+	content: " Boring";
+	color: gray;
+}
+
+p::before{
+	content: "<<";
+	color: darkred;
+}
+p::after{
+	content: ">>";
+	color: darkblue;
+}
+p::first-letter{
+	color: white;
+	background-color: black;
+	font-size: 250%;
+	border-radius: 3px;
+	padding: 3px 6px;
+	margin-right: 6px;
+	box-shadow: 4px 4px darkred;
+}
+p::first-line{
+	color: red;
+	text-transform: uppercase;
+	background-color: black;
+}
+
+input[type=file]::file-selector-button{
+	border: 2px solid black;
+	padding: .2em 1em;
+	border-radius: 2em;
+	background-color: gray;
+	transition: 1s;
+}
+input[type=file]::file-selector-button:hover{
+	background-color: blue;
+	border: 2px solid white;
+}
+
+ol li::marker{
+	color: red;
+	font-size: 1.5em;
+}
+
+input::placeholder{
+	color: red;
+	font-style: italic;
+	font-family: sans-serif;
+}
+
+::selection{
+	color: black;
+	background-color: red;
+}
+p::selection{
+	color: white;
+	background-color: darkblue;
+}*/
+
+::spelling-error{
+	text-decoration: wavy red;
+}
