@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Account</title>
+	<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+	<div class="header">
+	<div class="container">
+		<div class="navbar">
+		    <div class="logo">
+			    <img src="images/cart.png" width="50px">
+			        <h1>CARTZILLA</h1>
+		    </div>
+		    <nav>
+			<ul>
+				<li><a href="frontpage.html">Home</a></li>
+				<li><a href="products.html">Products</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="signup.html">Account</a></li>
+			</ul>
+		    </nav>
+		    <img src="images/cart1.png" width="30px" height="30px">
+	    </div> 
+	</div>
+   </div>
+<!--Account page-->
+<div class="account-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-2">
+				<img src="images/frontimg.jpg">
+			</div>
+			<div class="col-2">
+				<div class="form-container">
+					<div class="form-btn">
+						<span onclick="login()">Login</span>
+						<span onclick="register()">Register</span>
+						<hr id="Indicator">
+					</div>
+
+					<form id="LoginForm" action="frontpage.html" method="post">
+						<input type="text" placeholder="Email" id="email1">
+						<input type="password" placeholder="Password" id="password1">
+						<div id="errorBox1"></div>
+						<button type="submit" class="btn" onclick="return signinvalidate()">Login</button>
+						<a href="">Forgot Password</a>
+					</form>
+
+					<form id="RegForm" action="frontpage.html" method="post">
+						<input type="text" name="name" placeholder="Username" id="name">
+						<input type="email" name="email" placeholder="Email" id="email">
+						<input type="password" name="password" placeholder="Password" id="password">
+						<input type="password"  name="repassword" placeholder="ReEnter-Password" id="repassword">
+						<div id="errorBox"></div>
+						<button type="submit" class="btn" onclick="return signupvalidate()">Sign-Up</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+   <!--footer-->
+    <div class="footer">
+    	<div class="small-container">
+    		<div class="row">
+    			<div class="foot-col">
+    				 <p>Download now</p>
+    				 <p>Download our app for mobile phone</p>
+    			</div>
+    			<div class="foot-col1" id="about">
+    				<h3>Useful links</h3>
+    				<ul>
+    					<li>Coupons</li>
+    					<li>Blog</li>
+    					<li>Return Policy</li>
+    					<li>Join Affliate</li>
+    				</ul>
+    			</div>
+    			<div class="foot-col2" id="contact">
+    				<h3>Follow Us!!</h3>
+    				<ul>
+    					<li>Facebook</li>
+    					<li>Twitter</li>
+    					<li>Instagram</li>
+    					<li>Youtube</li>
+    				</ul>
+    			</div>
+    		</div>
+    		<hr>
+    		<p class="copy">Copyright 2021-CartZilla</p>
+    	</div>
+    </div>
+
+    <script>
+    	var LoginForm=document.getElementById("LoginForm");
+    	var RegForm=document.getElementById("RegForm");
+    	var Indicator=document.getElementById("Indicator");
+
+    	function register() {
+    		RegForm.style.transform="translateX(0px)";
+    		LoginForm.style.transform="translateX(0px)";
+    		Indicator.style.transform="translateX(100px)";	
+    	}
+
+    	function login() {
+    		RegForm.style.transform="translateX(300px)";
+    		LoginForm.style.transform="translateX(300px)";
+    		Indicator.style.transform="translateX(0px)";
+    	}
+
+    	function signupvalidate() {
+		var namecheck = /^[A-Za-z. ]{3,20}$/;
+		var emailcheck=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+		var passwordcheck=/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
+		var uname=document.getElementById('name').value;
+		var emailvalid=document.getElementById('email').value;
+		var passwordvalid=document.getElementById('password').value;
+		var repasswordvalid=document.getElementById('repassword').value;
+		if(!namecheck.test(uname)){
+			document.getElementById('errorBox').innerHTML="Enter the Valid UserName";
+			return false;
+		}else if(!emailcheck.test(emailvalid)){
+			document.getElementById('errorBox').innerHTML="Enter Valid Mail Id";
+			return false;
+		}else if(!passwordcheck.test(passwordvalid)){
+			document.getElementById('errorBox').innerHTML="Enter Valid Password";
+			return false;
+		}
+		else if(passwordvalid!=repasswordvalid){
+			document.getElementById('errorBox').innerHTML="Password Don't Match"
+			return false;
+		}
+		else{
+			alert("Register Successfully");
+			return true;
+		}
+		}
+
+		function signinvalidate() {
+			var emailcheck1=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+		    var passwordcheck1=/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
+		    var emailvalid1=document.getElementById('email1').value;
+		    var passwordvalid1=document.getElementById('password1').value;
+
+		    if(!emailcheck1.test(emailvalid1)){
+			document.getElementById('errorBox1').innerHTML="Enter Valid Mail Id";
+			return false;
+		    }else if(!passwordcheck1.test(passwordvalid1)){
+			document.getElementById('errorBox1').innerHTML="Enter Valid Password";
+			return false;
+		    }else{
+		    	alert("Login Successfully");
+		    	return true;
+		    }
+		}
+    </script>
+
+    
+</body>
+</html>
