@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="myhomestyle.css">
+</head>
+<body>
+	<div class="header">
+		<h1>Welcome to this Page!</h1>
+		<div id="mynav" class="sidenav">
+			<a href="#aboutinfo" id="about">About</a>
+			<a href="#contactinfo" id="contact">Contact</a>
+			<a href="webpage.html" id="exit">Logout</a>			
+		</div>
+		<form>
+			<input type="text" name="search" placeholder="Search">
+		</form>
+	</div>
+
+	<div class="row">
+		<div class="column">
+			<div class="card">
+				<img src="marina.jpg" style="width: 100%;" class="marina">
+				<div class="container">
+					<h2>Marina Beach</h2>
+					<h3>Chennai</h3>
+					<p>This is the most famous tourism place in Chennai<span id="dots">...</span><span id="more">It is natural urban beach in Chennai,Tamilnadu,India,along the Bay Of Bengal.The Beach runs from near Fort St.George in the north to Foreshore Estate in the South,a distance of 6km,making it the longest urban beach in the country.The average width of the beach is 300m(980 ft)and the width at the widest stretch is 437m(1,434ft).It is one of the most crowded beaches in the country and attracts about 30,000 visitors a day during weekdays and 50,000 visitors a day during the weekends and on holidays.During summer months, about 15,000 to 20,000 people visit the beach daily.The beach receives the maximum number of visitors on the Kannum Pongal day, a day in the festival season of Pongal in mid-January, when about 150,000 people come to the beach.</span></p>
+					<p><button class="button" onclick="chennaifunction()" id="chennaibtn">Readmore</button></p>
+				</div>
+			</div>
+			
+		</div>
+		<div class="column">
+			<div class="card">
+				<img src="ooty1.jpg" style="width: 100%; height: 225px;" class="ooty">
+				<div class="container">
+					<h2>Ooty</h2>
+					<h3>Niligiri</h3>
+					<p>It is called the Queen Of Western Ghats<span id="dos">...</span><span id="mor">Ooty officially known as Udhagamandalam.It is located 86 km north west of Coimbatore, 90 km east of Nilambur, 94 km souh-east of Sulthan Bathery, 100 km north west of Tiruppur and 128 km south of Mysore and is the headquarters of the Nilgiris district. It is a popular hill station located in the Nilgiri Hills.Ooty is a popular tourist attraction with many places of interest in and around the town.Gardens and parks,Lakes and dams,Tribal huts and museum,Nilgiri Mountain Railway,Historical buildings Tea Factory</span></p>
+					<p><button class="button" onclick="ootyfunction()" id="ootybtn">Readmore</button></p>
+				</div>
+			</div>
+			
+		</div>
+		<div class="column">
+			<div class="card">
+				<img src="kanyakumari.jpg" style="width: 100%; height: 205px;" class="Kanyakumari">
+				<div class="container">
+					<h2>Thiruvaluvar Statue</h2>
+					<h3>Kanyakumari</h3>
+					<p>The height of the statue and pedestal is 133 feet,denoting the 133 chapters of the Thirukural.<span id="dots2">...</span><span id="more2">It is located atop a small island near the town of Kanyakumari on the southernmost point of the Indian peninsula on the Coromandel Coast, where two seas (the Bay of Bengal and the Arabian Sea) and an ocean (the Indian Ocean) meet. The statue was sculpted by the Indian sculptor V. Ganapati Sthapati, who also created the Iraivan Temple, and was unveiled on the millennium day of 1 January 2000 by the then Chief Minister M. Karunanidhi. It is currently the 25th tallest statue in India.</span></p>
+					<p><button class="button" onclick="kanyakumarifunction()" id="kanyakumaribtn">Readmore</button></p>
+				</div>
+			</div>	
+		</div>
+	</div>
+
+	<div class="about" id="aboutinfo">
+		<p>About:This is Tourist Guide Page.It describes the Tourist places and about the place and Location. </p>
+	</div>
+	<div class="contact" id="contactinfo">
+		<p>Email-Id:karthi@gmail.com<br>Phone-No:9876543210</p>
+	</div>
+
+	<script>
+		function chennaifunction() {
+			var dots=document.getElementById("dots");
+			var moretext=document.getElementById("more");
+			var btntext=document.getElementById("chennaibtn");
+
+			if(dots.style.display ==="none"){
+				dots.style.display="inline";
+				btntext.innerHTML="Read more";
+				moretext.style.display="none";
+			}
+			else{
+				dots.style.display="none";
+				btntext.innerHTML="Read Less";
+				moretext.style.display="inline";
+			}
+		}
+
+		function ootyfunction() {
+			var dots1=document.getElementById("dos");
+			var moretext1=document.getElementById("mor");
+			var btntext1=document.getElementById("ootybtn");
+
+			if(dots1.style.display ==="none"){
+				dots1.style.display="inline";
+				btntext1.innerHTML="Read more";
+				moretext1.style.display="none";
+			}
+			else{
+				dots1.style.display="none";
+				btntext1.innerHTML="Read Less";
+				moretext1.style.display="inline";
+			}
+		}
+		function kanyakumarifunction() {
+			var dots2=document.getElementById("dots2");
+			var moretext2=document.getElementById("more2");
+			var btntext2=document.getElementById("kanyakumaribtn");
+
+			if(dots2.style.display ==="none"){
+				dots2.style.display="inline";
+				btntext2.innerHTML="Read more";
+				moretext2.style.display="none";
+			}
+			else{
+				dots2.style.display="none";
+				btntext2.innerHTML="Read Less";
+				moretext2.style.display="inline";
+			}
+		}
+
+	</script>
+</body>
+</html>

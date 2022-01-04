@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body>
+	<h1>Tourism</h1>
+	<div class="container" id="container">                                       <!--create a div for signin and signup form-->
+		<div class="form-container sign-up-container">                           <!--create a div for signup only-->
+			<form onsubmit="return signupvalidate()">                            <!--create a sign-upform-->
+				<h2>Create Account</h2>
+				<input type="text" id="name" placeholder="Username">             <!--create a username box-->
+				<input type="text" id="email" placeholder="Email">               <!--create a email box-->
+				<input type="password" id="password" placeholder="Password">     <!--create a password box-->
+				<label class="show"><input type="checkbox" class="checking" onclick="myfunction()">Show</label>
+				<button>Sign-up</button>                                         <!--create a Signup button-->
+			</form>                                                              <!--close signup form-->
+		</div>
+		<div class="form-container sign-in-container">                           <!--create a div for signin only-->
+			<form action="myhome.html" method="post">                            <!--create a sign-inform with page redirect-->
+				<h2>Sign-In</h2>
+				<input type="text" id="email1" placeholder="Email">              <!--create a email box-->
+				<input type="text" id="password1" placeholder="Password">        <!--create a password box-->
+				<button type="submit" onclick="return signinvalidate()">Sign-In</button>    <!--create a Signin button with validate js fxn-->
+			</form>                                                              <!--close signup form-->
+		</div>
+		<div class="overlay-container">                          <!--create a overlay container for -->
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<p>If you Signup Please SignIn</p>
+					<button class="press" id="sign-in">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h2>Welcome</h2>
+					<p>If you did not SignUp Please SignUp</p>
+					<button class="press" id="sign-up">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function signupvalidate() {
+		var namecheck = /^[A-Za-z. ]{3,20}$/;
+		var emailcheck=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+		var passwordcheck=/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
+		var uname=document.getElementById('name').value;
+		var emailvalid=document.getElementById('email').value;
+		var passwordvalid=document.getElementById('password').value;
+		if(uname==null||uname==""){
+				document.write("UserName is Required");
+				return false;
+		}else if(!emailcheck.test(emailvalid)){
+			alert("Please Enter Valid Email Id");
+			document.getElementById('email').focus();
+			return false;
+		}else if(!passwordcheck.test(passwordvalid)){
+			alert("Password must contain atleast one number and one uppercase and lowercase letter and size 8 or more characters");
+			document.getElementById('password').focus();
+			return false;
+		}else{
+			return true;
+		}
+		}
+
+		function signinvalidate() {
+			var emailcheck1=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+		    var passwordcheck1=/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
+		    var emailvalid1=document.getElementById('email1').value;
+		    var passwordvalid1=document.getElementById('password1').value;
+
+		    if(!emailcheck1.test(emailvalid1)){
+			alert("Please Enter Valid Email Id");
+			document.getElementById('email1').focus();
+			return false;
+		    }else if(!passwordcheck1.test(passwordvalid1)){
+			alert("Password must contain atleast one number and one uppercase and lowercase letter and size 8 or more characters");
+			document.getElementById('password1').focus();
+			return false;
+		    }
+		}	
+		function myfunction() {
+			var x=document.getElementById('password');
+			if(x.type=="password"){
+				x.type="text";
+			}else{
+				x.type="password";
+			}
+		}	
+
+		const signUpButton=document.getElementById("sign-up");
+		const signInButton=document.getElementById("sign-in");
+		const container=document.getElementById("container");
+
+		signUpButton.addEventListener('click',()=>{
+			container.classList.add("right-panel-active");
+		})
+		signInButton.addEventListener('click',()=>{
+			container.classList.remove("right-panel-active");
+		})
+	</script>
+</body>
+</html>
