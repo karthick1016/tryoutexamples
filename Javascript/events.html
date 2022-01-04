@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        .title{
+            height: 195px;
+            width: 25%;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!--<button>Click Here!!</button>
+
+    <script>
+        const btn=document.querySelector('button');
+
+        function random(number) {
+            return Math.floor(Math.random()*(number+1));
+        }
+
+        btn.addEventListener('click',()=>{
+            const rdncol=`rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+            document.body.style.backgroundColor=rdncol;
+        })
+    </script>
+
+
+    <form>
+        <div>
+            <label for="fname">FirstName</label>
+            <input type="text" id="fname">
+        </div><br>
+        <div>
+            <label for="lname">LastName</label>
+            <input type="text" id="lname">
+        </div><br>
+        <div>
+            <input id="submit" type="submit">
+        </div>
+    </form>
+    <p></p>
+
+    <script>
+        const form=document.querySelector('form');
+        const fname=document.getElementById('fname')
+        const lname=document.getElementById('lname');
+        const para=document.querySelector('p');
+
+        form.addEventListener('submit',e=>{
+            if(fname.value===''||lname.value===''){
+                e.preventDefault();
+                para.textContent='Fill Both Names';
+            }
+        })
+    </script>
+   
+
+    <div id="container">
+        <button>Click me</button>
+    </div>
+    <pre id="output"></pre>
+
+    <script>
+        const output=document.getElementById('output');
+
+        function eventHand(e) {
+            output.textContent+=`You clicked on a ${e.currentTarget.tagName} element\n`;
+        }
+        const container=document.getElementById('container');
+        container.addEventListener('click',eventHand);
+    </script>
+
+    
+     
+    <div id="container">
+        <button>Click me</button>
+    </div>
+    <pre id="output"></pre>
+
+    <script>
+        const output=document.getElementById('output');
+
+        function eventHand(e) {
+            output.textContent+=`You clicked on a ${e.currentTarget.tagName} element\n`;
+        }
+
+        const container=document.getElementById('container');
+        const btn=document.querySelector('button');
+
+        document.body.addEventListener('click',eventHand);
+        btn.addEventListener('click',eventHand);
+        container.addEventListener('click',eventHand);
+
+    </script>
+      -->
+
+      <div id="container">
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+          <div class="title"></div>
+      </div>
+
+      <script>
+          function random(number) {
+              return Math.floor(Math.random()*number);
+          }
+          function bgchange() {
+              const rgbcolor=`rgb(${random(255)},${random(255)},${random(255)})`;
+              return rgbcolor;
+          }
+
+          const container=document.getElementById('container');
+
+          container.addEventListener('click',event=>event.target.style.backgroundColor=bgchange());
+      </script>
+</body>
+</html>
