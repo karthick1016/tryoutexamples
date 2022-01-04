@@ -1,0 +1,276 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.our-map{
+	width: 50%;
+	height: 110vh;
+	background: url("map.jpg");
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+.address-Gujarat{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top: 48%;
+	left: 10%;
+	z-index: 99;
+}
+.address-Tamilnadu{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top: 85%;
+	left: 35%;
+	z-index: 99;
+}
+.address-Kerala{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top: 90%;
+	left: 27%;
+	z-index: 99;
+}
+.address-Karnataka{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top: 77%;
+	left: 23%;
+	z-index: 99;
+}
+.address-AndhraPradesh{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top: 75%;
+	left: 36%;
+	z-index: 99;
+}
+.address-Telengana{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top: 65%;
+	left: 36%;
+	z-index: 99;
+}
+.address-Maharashtra{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top: 60%;
+	left: 22%;
+	z-index: 99;
+}
+.address-MadhyaPradesh{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top: 46%;
+	left: 29%;
+	z-index: 99;
+}
+.address-Chhatisgarh{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:53%;
+	left: 46%;
+	z-index: 99;
+}
+.address-Odissa{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:56%;
+	left: 56%;
+	z-index: 99;
+}
+.address-Rajasthan{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:33%;
+	left: 14%;
+	z-index: 99;
+}
+.address-Haryana{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:26%;
+	left: 28%;
+	z-index: 99;
+}
+.address-Punjab{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:20%;
+	left: 23%;
+	z-index: 99;
+}
+.address-Delhi{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:29%;
+	left: 32%;
+	z-index: 99;
+}
+.address-Uttarakhand{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:22%;
+	left: 37%;
+	z-index: 99;
+}
+.address-HimachalPradesh{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:15%;
+	left: 31%;
+	z-index: 99;
+}
+.address-JammuandKashmir{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:8%;
+	left: 30%;
+	z-index: 99;
+}
+.address-UttaraPradesh{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:33%;
+	left: 42%;
+	z-index: 99;
+}
+.address-Bihar{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:33%;
+	left: 60%;
+	z-index: 99;
+}
+.address-Jharkhand{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:44%;
+	left: 58%;
+	z-index: 99;
+}
+.address-WestBengal{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:44%;
+	left: 67%;
+	z-index: 99;
+}
+.address-Sikkim{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:29%;
+	left: 68%;
+	z-index: 99;
+}
+.address-Assam{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:32%;
+	left: 80%;
+	z-index: 99;
+}
+.address-Meghalaya{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:35%;
+	left: 77%;
+	z-index: 99;
+}
+.address-Tripura{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:41%;
+	left: 81%;
+	z-index: 99;
+}
+.address-Mizoram{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:43.5%;
+	left: 85%;
+	z-index: 99;
+}
+.address-Manipur{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:38%;
+	left: 88%;
+	z-index: 99;
+}
+.address-Nagaland{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:32%;
+	left: 89%;
+	z-index: 99;
+}
+.address-ArunachalaPradesh{
+	width: 30%;
+	height: auto;
+	position: absolute;
+	top:26.5%;
+	left: 87%;
+	z-index: 99;
+}
+.tooltip-col{
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+
+}
+.tooltiptext3{
+	visibility: hidden;
+	width: 120px;
+	height: auto;
+	background-color: red;
+	color: white;
+	position: absolute;
+	z-index: 5;
+	top: 15px;
+	right: -70px;
+}
+.tooltiptext3::after{
+	content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 45%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip-col:hover .tooltiptext3{
+	visibility: visible;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FORM-VALIDATION</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h2>Registration Form</h2>
+		</div>	
+		<form class="form" id="form" action="my.html" method="post">
+			<div class="form-control">
+			<label>FirstName</label>
+			<input type="text" placeholder="FirstName" id="firstname">
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation circle"></i>
+			<small>Error Message</small>
+		    </div>
+		    <div class="form-control">
+			<label>LastName</label>
+			<input type="text" placeholder="LastName" id="lastname">
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation circle"></i>
+			<small>Error Message</small>
+		    </div>
+		    <div class="form-control">
+			<label>Company</label>
+			<input type="text" placeholder="CompanyName" id="companyname">
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation circle"></i>
+			<small>Error Message</small>
+		    </div>
+		    <div class="form-control">
+			<label>Email</label>
+			<input type="email" placeholder="example@gmail.com" id="email">
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation circle"></i>
+			<small>Error Message</small>
+		    </div>
+		    <div class="form-control">
+			<label>Phone-no</label>
+			<input type="tel" placeholder="Phone-no" id="phoneno">
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation circle"></i>
+			<small>Error Message</small>
+		    </div>
+		    <button onclick= "return checkInput()">Submit</button>
+		</form>
+	</div>
+
+	<script>
+		const form=document.getElementById("form");
+		const firstname=document.getElementById("firstname");
+		const lastname=document.getElementById("lastname");
+		const companyname=document.getElementById("companyname");
+		const email=document.getElementById("email");
+		const phone=document.getElementById("phoneno");
+
+		form.addEventListener('submit',e=>{
+			e.preventDefault();
+			checkInput();
+		})
+
+		function checkInput() {
+			const firstnamevalue=firstname.value.trim();
+			const lastnamevalue=lastname.value.trim();
+			const companynamevalue=companyname.value.trim();
+			const emailvalue=email.value.trim();
+			const phonevalue=phone.value.trim();
+
+			var firstnamecheck=/^[A-Za-z. ]{3,20}$/;
+			var lastnamecheck=/^[A-Za-z. ]{3,20}$/;
+			var companynamecheck=/^[A-Za-z. ]{3,20}$/;
+			var emailcheck=/^[A-Za-z_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+			var phonecheck=/^[7-9][0-9]{9}$/;
+
+			if(firstnamevalue===''){
+				setError(firstname,'FirstName cannot be blank');
+			}else if(!(firstnamecheck.test(firstnamevalue))) {
+				setError(firstname,'Invalid FirstName');
+			}else{
+				setSuccess(firstname);
+			}
+
+			if(lastnamevalue===''){
+				setError(lastname,'LastName cannot be blank');
+			}else if (!(lastnamecheck.test(lastnamevalue))) {
+				setError(lastname,'Invalid LastName');
+			} else{
+				setSuccess(lastname);
+			}
+
+			if(companynamevalue===''){
+				setError(companyname,'CompanyName cannot be blank');
+			}else if (!(companynamecheck.test(companynamevalue))) {
+				setError(companyname,'Invalid CompanyName');
+			} else{
+				setSuccess(companyname);
+			}
+
+			if(emailvalue===''){
+				setError(email,'Email cannot be blank');
+			}else if(!(emailcheck.test(emailvalue))){
+				setError(email,'Invalid Email');
+			}else{
+				setSuccess(email);
+			}
+
+			if(phonevalue===''){
+				setError(phone,'Phone number cannot be blank');
+			}else if(!(phonecheck.test(phonevalue))){
+				setError(phone,'Invalid Phone Number');
+
+			}else{
+				setSuccess(phone);
+			}
+		}
+
+
+		function setError(input,message) {
+			const formControl=input.parentElement;
+			const small=formControl.querySelector('small');
+			formControl.className='form-control error';
+			small.innerText=message;
+		}
+		function setSuccess(input,message){
+			const formControl=input.parentElement;
+			formControl.className='form-control success';
+		}
+	</script>
+</body>
+</html>

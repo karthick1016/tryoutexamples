@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>INPUT Checkbox</title>
+
+	<style type="text/css">
+		form{
+			width: 600px;
+			margin: 0 auto;
+		}
+		div{
+			margin-bottom: 10px;
+		}
+		fieldset{
+			background: cyan;
+			border: 5px solid black;
+		}
+		legend{
+			padding: 5px;
+			background: blue;
+			color: cyan;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Which Food Do you prefer?</legend>
+			<div>
+				<input type="checkbox" id="idly" name="food" value="idly">
+				<label for="idly">Idly</label>
+			</div>
+			<div>
+				<input type="checkbox" id="Dosa" name="food" value="Dosa">
+				<label for="Dosa">Dosa</label>
+			</div>
+			<div>
+				<input type="checkbox" id="chappathi" name="food" value="chappathi">
+				<label for="chappathi">Chappathi</label>
+			</div>
+			<div>
+				<input type="checkbox" id="poori" name="food" value="poori">
+				<label for="poori">Poori</label>
+			</div>
+			<div>
+				<input type="checkbox" id="parotta" name="food" value="parotta">
+				<label for="parotta">Parotta</label>
+			</div>
+			<div>
+				<input type="checkbox" id="meals" name="food" value="meals">
+				<label for="meals">Meals</label>
+			</div>
+			<div>
+				<input type="checkbox" id="others" name="food" value="others">
+				<label for="others">Others</label>
+				<input type="text" id="othervalue" name="others">
+			</div>
+			<div>
+				<button type="submit">Submit</button>
+			</div>
+		</fieldset>
+	</form>
+
+	<script type="text/javascript">
+		var otherCheckBox=document.querySelector('input[value="others"]');
+		var otherText=document.querySelector('input[id="othervalue"]');
+
+		otherText.style.visibility='hidden';
+
+		otherCheckBox.addEventListener('change',()=>
+		{
+			if(otherCheckBox.checked){
+				otherText.style.visibility='visible';
+				otherText.value='';
+			}else{
+				otherText.style.visibility='hidden';
+			}
+		})
+	</script>
+</body>
+</html>

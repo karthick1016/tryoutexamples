@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <form>
+      <label>FirstName</label>
+      <input type="text" id="name"><br>
+      <span id="error"></span><br>
+      <button id="btn">Submit</button>
+    </form>
+
+    <script>
+      var firstnamecheck=/^[A-Za-z. ]{3,20}$/;
+
+      const form=document.querySelector('form');
+      const input=document.querySelector('input');
+      const error=document.querySelector('span');
+      const btn=document.querySelector('button');
+
+      input.addEventListener('input',checkInput);
+      btn.addEventListener('click',checkInput);
+      
+      function checkInput() {
+        const firstName=input.value;
+        if(firstName===" "){
+        error.textContent="Can't be blank";
+      }else if(!(firstnamecheck.test(firstName))){
+        error.textContent="Invalid";
+      }else{
+        error.textContent=" ";
+      }
+      }
+    </script>
+</body>
+</html>

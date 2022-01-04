@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FORM VALIDATION</title>
+	<link rel="stylesheet" type="text/css" href="formstyle.css">
+	<script>
+		function validateform() 
+		{
+			var regName = /^[A-Za-z. ]{3,20}$/;
+			var emailcheck=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+			var phonecheck=/^[7-9][0-9]{9}$/;
+
+			var fname=document.getElementById('first_name').value;
+			var lname=document.getElementById('last_name').value;
+			var cname=document.getElementById('company').value;
+			var emailvalid=document.getElementById('email').value;
+			var phonevalid=document.getElementById('phone').value;
+			var areacodevalid=document.getElementById('area_code').value;
+			if(!regName.test(fname)){
+				alert("Please Enter Valid FirstName");
+				document.getElementById('first_name').focus();
+				return false;
+			}else if(!regName.test(lname)){
+				alert("Please Enter Valid LastName");
+				document.getElementById('last_name').focus();
+				return false;
+			}else if(!regName.test(cname)){
+				alert("Please Enter Company name");
+				document.getElementById('company').focus();
+				return false;
+			}else if(!emailcheck.test(emailvalid)){
+				alert("Please Enter Valid Email Id");
+				document.getElementById('email').focus();
+				return false;
+			}else if(!phonecheck.test(phonevalid)){
+				alert("Please Enter Valid Mobile Number");
+				document.getElementById('phone').focus();
+				return false;
+			}else if(areacodevalid==""){
+				alert("Please Enter Valid Area code");
+				document.getElementById('area_code').focus();
+				return false;
+			}else{
+				alert("Registration completed");
+				return true;
+			}
+		}
+	</script>
+
+</head>
+<body>
+	<div class="regform"><h2>Event Registration Form</h2></div>
+	<div class="main">
+		<form name="myform"  onsubmit="return validateform()">
+			<div id="name">
+				<h2 class="name">Name</h2>
+				<input class="firstname" type="text" id="first_name"><br>
+				<label class="firstlabel">Firstname</label>
+				<input class="lastname" type="text" id="last_name">
+				<label class="lastlabel">Lastname</label>
+				
+			</div>
+
+			<h2 class="name">Company</h2>
+			<input class="company" type="text" id="company">
+
+			<h2 class="name">Email</h2>
+			<input  class="email" type="text" id="email" placeholder="example@gmail.com">
+			
+
+			<h2 class="name">Phone</h2>
+			<input class="code" type="text" id="area_code">
+			<label class="area-code">Area_code</label>;
+			<input class="number" type="text" id="phone">
+			<label class="phone-number">Phone number</label>
+
+			<h2 class="name">Subject</h2>
+			<select class="option" name="subject">
+			<option disabled="disables" selected="selected">Choose Option</option>
+			<option>Subject 1</option>
+			<option>Subject 2</option>
+			<option>Subject 3</option>
+			</select>
+
+			<h2 id="student">Are you Existing customer</h2>
+
+			<input type="radio" id="yes" name="checking">
+			<label for="yes">Yes</label>
+			<input type="radio" id="no" name="checking">
+			<label for="no">No</label>
+			<button type="submit" value="Register">Register</button>
+		</form>
+	</div>
+</body>
+</html>

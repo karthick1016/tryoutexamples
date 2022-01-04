@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Webstorage</title>
+</head>
+<body>
+	<!--<div id="result"></div>
+
+	<script type="text/javascript">
+		if(typeof(Storage)!=="undefined"){
+			document.getElementById('result').innerHTML="Browser support";
+		}else{
+			document.getElementById('result').innerHTML="Browser does not Support";
+		}
+	</script> -->
+	<!--<script type="text/javascript">
+		if(typeof(Storage)!=="undefined"){
+			localStorage.setItem("Name","Karthick");
+			localStorage.setItem("Country","India");
+			document.write("Hi"+" "+localStorage.Name+" "+"from " +localStorage.Country);
+		}
+		else{
+			alert("Browser does not support");
+		}
+	</script>-->
+
+	<!--<button onclick="count()">CLick Me</button>
+	<div id="output">See here</div>
+
+	<script type="text/javascript">
+		function count() {
+			if(localStorage.hits){
+				localStorage.hits=Number(localStorage.hits)+1;
+			}else{
+				localStorage.hits=1;
+			}
+			document.getElementById('output').innerHTML="You clicked "+localStorage.hits+" times";
+		}
+	</script>-->
+
+	<button onclick="remove()">Remove item</button>
+	<div id="output"></div>
+
+	<script type="text/javascript">
+		if(typeof(Storage)!=="undefined"){
+			localStorage.setItem("name","karthick");
+			localStorage.setItem("country","India");
+
+			document.getElementById('output').innerHTML="Hi,my name is"+" "+localStorage.name+" "+"from "+localStorage.country;
+		}else{
+			alert("did not support");
+		}
+
+		function remove() {
+			localStorage.removeItem("name");
+			document.getElementById('output').innerHTML="Hi,my name is"+" "+localStorage.name+" "+"from "+localStorage.country;
+		}
+	</script>
+</body>
+</html>
