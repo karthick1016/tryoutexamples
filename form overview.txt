@@ -1,0 +1,38 @@
+Form Validation Using OOPS
+
+I create a 3 files for html,css,javascript
+HTML:
+Create a form
+
+first i create a container using div
+inside the div i create form for fields like
+
+1.Firstname-contain only alphapetical characters
+2.Lastname-contain only alphapetical characters
+3.Email-contain only alphanumeric values
+4.DateOfBirth-it should be like DD/MM/YYYY
+
+CSS:
+I styling forms using External CSS for 
+
+
+Javascript:
+In js first i create a class
+
+class Form ---inside the class i create a constructor
+
+constructor(fname,lname,email,dob)
+
+Then i create a another class for display
+
+Inside the display class i create a method for showError
+
+Below that i validate fields using regex inside the function
+
+if any error i will call display class  
+
+Then i using addEventListener input -- if user type invalid value it will 
+show the error.
+
+
+Timeline:3days
