@@ -7,65 +7,69 @@
     <title>Objects</title>
 </head>
 <body>
-    <!--<script>
-        const person={
-            name:['Karthi'],
-            age:32,
-            gender:'Male',
-            greeting:function(){
-                alert("Hello World!!");
-            }
+    <script>
+        /*var person = {
+            name : 'karthi',
+            age : 21
         };
+        var key = prompt("What do you want to know about the user?","name");
+        alert(person[key]);
+        
+       //computed properties
 
-        console.log(person.name);
-        console.log(person.gender);
-        person.greeting();
-    </script>
+       var fruit = prompt("Which fruit to buy","apple");
 
-<script>
-    const person1={
-        name:'Abinesh',
-        age:21,
-        greeting:function(){
-            alert("Hi I'm"+this.name+".");
-        }
-    }
+       var bag = {
+           [fruit] : 5,
+       };
+       alert(bag.apple);
+     
+      //property value shorthand
 
-    const person2={
-        name:'Deepthi',
-        age:21,
-        greeting:function(){
-            alert("Hi I'm  "+this.name+".");
-        }
-    }
-
-    console.log(person1.name);
-    console.log(person1.age);
-    person1.greeting();
-
-    console.log(person2.name);
-    console.log(person2.age);
-    person2.greeting();
-</script>
--->
-<script>
-    function Person(first, last, age, gender, interests) {
-        this.name = {
-          'first': first,
-          'last' : last
-        };
-        this.age = age;
-        this.gender = gender;
-        this.interests = interests;
-        this.bio = function() {
-          alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
-        };
-        this.greeting = function() {
-          alert('Hi! I\'m ' + this.name.first + '.');
-        };
+      function makeUser(name,age) {
+          return{
+              name,
+              age
+          }
+      }
+      var user = makeUser('Prabhu',25);
+      alert(user.name);
+        
+       //property existence test
+       var user = {
+           name : 'karthi',
+           age :21,
+       };
+       alert('name' in user);
+       alert("joke" in user);
+       
+      var user = {
+          name : 'karthick',
+          age : 21,
       };
+      for(var key in user){
+          alert(key);
+          alert(user[key]);
+      }
+      //object assigning
+      var users = {
+          name : 'Karthick'
+      };
+      var again = users;
+      again.name = 'Prabhu';
+      alert(users.name);
+      */
+     //"this"
 
-      let person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
-</script>
+     var user = {
+         name : 'karthick',
+         age : 23,
+
+         sayHi(){
+             alert(this.name);
+         }
+     };
+     user.sayHi();
+    </script>
 </body>
 </html>

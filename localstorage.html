@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="counter()">Click Me</button>
+    <div id="output">See the results</div>
+    <script>
+       /* if(typeof(Storage)!=="undefined"){
+            localStorage.setItem("Name","Karthick");
+            localStorage.setItem("Country","India");
+            document.write("Hi "+localStorage.getItem + "from" + localStorage.getItem);
+        }else{
+            alert("Sorry!!Browser")
+        }*/
+        function counter() {
+            if(localStorage.hits){
+                localStorage.hits = Number(localStorage.hits)+1;
+            }else{
+                localStorage.hits = 1;
+            }
+        }
+        document.getElementById('output').innerHTML = "You clicked "+localStorage.hits + " times";
+    </script>
+</body>
+</html>

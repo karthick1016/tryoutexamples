@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Object</title>
+</head>
+<body>
+    <input type="text" id="textBox" placeholder="Enter Your Name"> 
+    <div id="output"></div>
+</body>
+<script>
+    const textBox = document.querySelector('input');
+    const div = document.querySelector('div');
+
+    textBox.addEventListener('keydown',event => div.textContent = `Your Name Spelling "${event.key}"`);
+</script>
+</html>

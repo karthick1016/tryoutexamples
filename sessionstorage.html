@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+    <!--<button onclick="counter()">Click Here..</button><br><br>
+    <div id="output">See the results</div>-->
+
+    <button onclick="">Remove Item</button>
+    <div id="output"></div>
+
+    <script>
+        /*function counter() {
+            if(sessionStorage.hits){
+                sessionStorage.hits = Number(sessionStorage.hits)+1;
+            }else{
+                sessionStorage.hits = 1;
+            }
+            document.getElementById('output').innerHTML = "You clicked " + sessionStorage.hits + " times";
+        }*/
+
+        if(typeof(storage)!=="undefined"){
+            sessionStorage.setItem("name","karthick");
+            sessionStorage.setItem("country","India");
+            document.getElementById("output").innerHTML="Hi" + sessionStorage.name + "from" + sessionStorage.country;
+        }else{
+            alert("Your browser does not support");
+        }
+        function remove() {
+            sessionStorage.removeItem("name");
+            document.getElementById("output").innerHTML = "Hi" + sessionStorage.name + "from" + sessionStorage.country;
+        }
+    </script>
+</body>
+</html>
