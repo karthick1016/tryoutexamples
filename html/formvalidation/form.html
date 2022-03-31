@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FORM</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="heading">Registration Form</div>
+            <form class="form" id="form">
+                <div class="elements">
+                    <label for="uname">Username</label>
+                    <input type="text" id="uname" name="uname" onchange="userName()">
+                </div>
+                <div class="elements">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" onchange="emailValid()">
+                </div>
+                <div class="elements"><label for="phone">PhoneNumber</label>
+                    <input type="tel" id="phone" onchange="phoneNumber()"></div>
+                <div class="elements"><label for="pwd">Password</label>
+                    <input type="password" id="pwd" onchange="password()"></div>
+                <div class="elements"><label for="repwd">Retype-Password</label>
+                    <input type="password" id="repwd" onchange="repassword()"></div>
+                <div class="elements"><label for="dob">DateOfBirth</label>
+                    <input type="date" id="dob"></div>
+                <div class="elements"><label for="date_time">Date & Time</label>
+                    <input type="datetime-local" id="date_time"></div>
+                <div class="elements"><label for="gender">Gender</label>
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label><br>
+                    <input type="radio" id="others" name="gender" value="Others">
+                    <label for="others">Others</label></div>
+                <div class="elements"><label for="dept">Course</label>
+                    <input type="checkbox" id="arts" value="Arts">
+                    <label for="arts">Arts</label>
+                    <input type="checkbox" id="engineering" value="Engineering">
+                    <label for="engineering">Engineering</label>
+                    <input type="checkbox" id="diplomo" value="diplomo">
+                    <label for="diplomo">Diplomo</label>
+                </div>   
+                <div class="elements">
+                    <label for="arts">Choose course in Arts</label>
+                    <select name="arts" id="arts"><option value="chemistry">Chemistry</option>
+                        <option value="computer">Computer Science</option>
+                        <option value="physics">Physics</option>
+                        <option value="biology">Biology</option>
+                        <option value="maths">Maths</option></select>
+                </div>
+                <div class="elements"><label for="engineer">Choose course in Engineering</label>
+                    <select name="engineer" id="engineer" multiple>
+                        <option value="eee">EEE</option>
+                        <option value="cse">CSE</option>
+                        <option value="ece">ECE</option>
+                        <option value="mech">Mech</option>
+                        <option value="civil">Civil</option>
+                    </select></div>
+                <div class="elements"><label for="gsearch">Search Google:</label>
+                    <input type="search" name="gsearch" id="gsearch"></div>
+                <div class="elements"> <label for="comment">Comment :</label>
+                    <textarea name="comment" id="comment" cols="30" rows="5">  </textarea></div>
+                <button class="btn" type="submit">SUBMIT</button>
+            </form>
+        </div>
+        <script src="validation.js"></script>
+    </body>
+</html>
