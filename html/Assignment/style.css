@@ -1,0 +1,19 @@
+.tab1{
+    border: 2px solid black;
+    margin-bottom: 10px;
+    width: 300px;
+    padding: 5px;
+    position: absolute;
+    top: 50px;
+}
+.tab2{
+    border: 2px solid brown;
+    margin-top: 50px;
+    width: 300px;
+    padding: 5px;
+    position: relative;
+}
+input{
+    padding: 5px;
+    margin: 10px;
+}
