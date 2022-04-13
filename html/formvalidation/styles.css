@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box; 
+}
+.container{
+    border: 2px solid black;
+    width: 500px;
+    margin-left: 400px;  
+}
+.heading{
+    text-align: center;
+    background-color: cyan;
+    padding: 10px;
+}
+.form{
+    padding: 5px;
+    background-color: beige;
+}
+.elements{
+    padding:10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
+    width: 150px;
+    padding: 5px 15px 5px 15px;
+    margin-left: 150px;
+    font-size: 15px;
+    font-weight: bold;    
+    background-color: red;
+}
+
+input:hover{
+    background-color: mediumorchid;
+    border-color: black;
+}
+input:focus{
+    background-color: lightblue ;
+    color: darkblue;
+    font-size: 15px;
+    font-style: italic;
+}
+#name_err{
+    margin-left: 290px;
+    text-align: center;
+    padding: 2px;
+}
+#email_err{
+    margin-left: 290px;
+    text-align: center;
+    padding: 2px;
+}
+#number_err{
+    margin-left: 290px;
+    text-align: center;
+    padding: 2px;
+}
+#pass_err{
+    margin-left: 290px;
+    text-align: center;
+    padding: 2px;
+}
+#repass_err{
+    margin-left: 290px;
+    text-align: center;
+    padding: 2px;
+}
+textarea
+{
+    resize: none;
+}
