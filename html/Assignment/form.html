@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
+    </head>
+    <body>
+        <div class="whole">
+            <h2>Registration Form</h2>
+        <form id="myform"> 
+            <div class="tabs" id="tab1">
+                <h3>BASIC</h3>
+                <div class="elements">
+                    <label for="email">Email Id <span>*</span> </label>
+                    <input type="email" id="email" placeholder="example@gmail.com" onchange="emailValid()" required>
+                </div>
+                <div class="errormessage" id="emailerr"></div>
+                <div class="elements">
+                    <label for="password">Password <span>*</span> </label>
+                    <input type="password" id="password" placeholder="example10" onchange="passValid()" required>
+                </div>
+                <div class="errormessage" id="passerr"></div>
+                <div class="elements">
+                    <label for="re_password">Confirm Password <span>*</span> </label>
+                    <input type="password" id="re_password" onchange="repassValid()" required>
+                </div>
+                <div class="errormessage" id="repasserr"></div>
+                <div class="elements">
+                    <label for="fname">FirstName <span>*</span> </label>
+                    <input type="text" id="fname" placeholder="example" onchange="firstName()" required>
+                </div>
+                <div class="errormessage" id="fnameerr"></div>
+                <div class="elements">
+                    <label for="lname">LastName</label>
+                    <input type="text" id="lname">
+                </div>
+                <button class="btn" id="btn1" onclick="moveTab(event)">Next</button>
+            </div>
+            <div class="tabs" id="tab2">
+                <h3>Others</h3>
+                <div class="elements">
+                    <label for="dob">DOB <span>*</span> </label>
+                    <input type="text" id="dob" onchange="dobValidate()" required/>
+                </div>
+                <div class="errormessage" id="doberr"></div>
+                <div class="elements" id="myradio">
+                    <label for="gender">Gender <span>*</span></label> 
+                    <input type="radio" name="gender" id="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="others">
+                    <label for="others">Others</label>
+                </div>
+                <div class="elements">
+                    <label for="address">Address</label>
+                    <textarea id="address" cols="20" rows="5"></textarea>
+                </div>
+                <div class="elements" id="states">
+                    <label for="state">State <span>*</span></label>
+                    <select name="state" id="state">
+                        <option value="!--SELECT--!">!--SELECT--!</option>
+                        <option value="tamilnadu">Tamilnadu</option>
+                        <option value="kerala">Kerala</option>
+                        <option value="karnataka">Karnataka</option>
+                        <option value="andhra">AndhraPradesh</option>
+                    </select>
+                </div>
+                <div class="elements">
+                    <label for="phone">Mobile Number <span>*</span></label> 
+                    <input type="tel" id="phone">
+                </div>
+                <div class="errormessage" id="phoneerr"></div>
+                <button class="prevbtn" id="pbtn">Previous</button>
+                <button class="nextbtn" id="nbtn" onclick="movetab3(event)">Next</button>
+            </div>
+            <div class="tabs" id="tab3">
+                <h3>WORK</h3>
+                    <div class="elements">
+                        <label for="occupation">Occupation</label>
+                        <input type="radio" name="occupation" id="yes">
+                        <label for="yes">Yes</label>
+                        <input type="radio" name="occupation" id="no">
+                        <label for="no">No</label>
+                    </div>
+                <div class="elements">
+                    <label for="exp">Overall Year Of Experience</label>
+                    <input type="tel" id="exp" placeholder="eg:5">
+                </div>
+                <button class="prevbtn" id="pbtn1">Previous</button>
+                <button class="nextbtn" id="nbtn1">Next</button>
+            </div>
+            <div class="tabs" id="tab4">
+                <h3>EDUCATION</h3>
+                <div class="elements" id="graduation">
+                    <label for="grad">Graduation <span>*</span></label>
+                    <select name="grad" id="grad" size="1" multiple>
+                        <option value="!--SELECT--!">!--SELECT--!</option>
+                        <option value="sslc">SSLC</option>
+                        <option value="hsc">HSC</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="arts">Arts</option>
+                        <option value="diplomo">Diplomo</option>
+                    </select>
+                </div>
+                <div class="elements">
+                    <label for="year">Year of Passing <span>*</span></label>
+                    <input type="text" id="year">
+                </div>
+                <button class="prevbtn" id="pbtn2" >Previous</button>
+                <button class="nextbtn" id="nbtn2" onclick="moveTab5(event)">Next</button>
+            </div>
+            <div class="tabs" id="tab5">
+                <h3>TEAM</h3>
+                <div class="elements" id="dept" required>
+                    <label for="department">Department <span>*</span></label>
+                    <select name="department" id="department">
+                        <option value="!--SELECT--!">!--SELECT--!</option>
+                        <option value="lamp">LAMP</option>
+                        <option value="bfs">BFS</option>
+                        <option value="dotnet">DOTNET</option>
+                    </select>
+                </div>
+                <div class="element">
+                    <input type="checkbox" name="terms" id="terms" onchange="checkbox()">
+                    <label for="terms">Accept Terms and Conditions <span>*</span></label>
+                </div>
+                <div id="termsandcondition"></div>
+                <button class="prevbtn" id="pbtn3">Previous</button>
+                <!-- <input type="submit" class="subbtn" id="nbtn3" value="Submit"> -->
+                <button class="subbtn" id="nbtn3" onclick="moveTab6(event)">Submit</button>
+            </div>
+            <div class="message" id="tab6">
+                <img src="ticks.jpg" width="100" height="100">
+                <p>Successfully!!</p>
+                <p>Your Registration Completed</p>
+                <button type="submit" id="pop_up">Ok
+        
+    </div>
+    <script src="formvalidate.js"></script>
+    </body>
+</html>

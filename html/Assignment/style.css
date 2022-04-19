@@ -1,0 +1,154 @@
+body{
+    background-image: url(back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.whole{
+    /* background-color: rgb(171, 238, 167); */
+    /* box-shadow: 0px 0px 20px #00000020; */
+    width: 480px;
+    height: 500px;
+    position: absolute;
+    top: 150px; 
+    left: 450px;
+}
+.tabs{
+    background: linear-gradient(pink,rgb(168, 168, 228));
+    width: 400px;
+    padding: 20px;  
+    border-radius: 8px; 
+    position:absolute;
+    top: 50px; 
+    left: 20px;
+}
+.elements{
+    padding:10px;
+    margin-top: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.element{
+    font-family: Rubik, sans-serif; 
+    padding: 10px;
+    margin-left: 60px;
+}
+.elements label{
+    font-family: Rubik, sans-serif;
+    font-size: 18px;
+    color: black;
+}
+.elements input{
+    border: 1.5px solid rgba(128, 128, 128, 0.418); 
+    padding: 5px;
+    border-radius: 4px;
+}
+.elements select{
+    border: 1.5px solid rgba(128, 128, 128, 0.418); 
+    padding: 5px;
+    border-radius: 4px;
+}
+.elements textarea{
+    border: 1.5px solid rgba(128, 128, 128, 0.418); 
+    padding: 3px;
+    border-radius: 4px;
+    resize: none;
+}
+.btn{
+    margin-top: 10px;
+    margin-left: 300px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkcyan;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+.prevbtn{
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkcyan;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+.nextbtn{
+    margin-top: 10px;
+    margin-left: 165px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkcyan;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+.subbtn{
+    margin-top: 10px;
+    margin-left: 155px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkcyan;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+.errormessage{
+    margin-left: 200px;
+    text-align: center;
+    padding: 2px;
+    color: red;
+    font-style: bold;
+}
+#termsandcondition{
+    margin-left: 100px;
+    width: 100px;
+    text-align: center;
+    padding: 2px;
+    color: red;
+    font-style: bold;
+}
+.message{
+    width: 300px;
+    height: 250px;
+    text-align: center;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: aliceblue;
+    box-shadow: 2.5px 2px 5px 2.5px red;
+    position: absolute;
+    top: 90px; 
+    left: 75px;
+}
+#pop_up{
+    width: 200px;
+    padding: 5px;
+    background-color: rgb(129, 248, 113);
+}
+h2{
+    color: white;
+    font-family: "Gill Sans", sans-serif;
+    text-align: center;
+    font-style: italic;
+    font-size: larger;
+}
+h3{
+    text-align: center;
+}
+::placeholder{
+    color: black;
+    font-style: italic;
+}
+select{
+    padding: 100px;
+    font-size: 14px;
+}/*karthi1*/
+span{
+    color: darkblue;
+}
