@@ -1,0 +1,26 @@
+body{
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+}
+.container{
+border : 2px solid black;
+width : 350px;
+background: linear-gradient(lightblue,rgb(168, 168, 228));
+}
+.element{
+    padding:10px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+h1{
+text-align:center;
+}
+.btn{
+padding : 10px;
+margin-left : 130px;
+margin-top : 20px;
+margin-bottom : 10px;
+}
