@@ -1,0 +1,104 @@
+body{
+	background: linear-gradient(to right,#e9defa,#fbfcdb);
+}
+.container{
+	display: -webkit-box;
+  	display: -ms-flexbox;
+  	display: flex;
+  	min-height: 100vh;
+	/*width: 300px;
+	position: absolute;
+	top: 150px;
+	left: 600px;*/
+}
+.container form{
+	margin: auto;
+ 	width: 450px;
+  	max-width: 100%;
+  	background: #fff;
+  	border-radius: 3px;
+}
+.elements{
+	padding:10px;
+    margin-top: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.login_head{
+	text-align: center;
+  	background: #8655fc;
+  	padding: 50px;
+}
+.login_head h4{
+	letter-spacing: 0;
+ 	text-transform: uppercase;
+  	font-weight: 600;
+  	margin-bottom: 7px;
+  	color: #fff;
+}
+.login_head p{
+	color: #fff;
+  	font-size: 14px;
+  	line-height: 22px;
+}
+.login_body{
+	padding: 50px;
+}
+.elements{
+	margin-bottom: 25px;
+  	position: relative;
+}
+.elements label{
+	position: absolute;
+  	left: 0;
+  	top: 0;
+  	color: #b3b2b2;
+  	
+    /*-webkit-transition: all 0.3s ease 0s;
+  	transition: all 0.3s ease 0s;*/
+}
+.elements.focused label {
+  top: -15px;
+  color: #7e74ff;
+}
+.elements input {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #e6e6e6;
+}
+/*input:focus{
+	outline: none;
+}*/
+.container .login_head,
+.container form,
+.container form .elements input{
+	background: transparent;
+}
+.container .login_head h4,
+.container .login_head p{
+	color: #444;
+}
+.btn{
+	text-align: center;
+}
+.btn button{
+	width: 100%;
+	height: 50px;
+	border: none;
+	background: #fff;
+	color: #585b5f;
+	border-radius: 40px;
+	text-transform: uppercase;
+	letter-spacing: 0;
+	font-weight: 600;
+	font-size: 12px;
+	box-shadow: 0 0 22px rgba(0, 0, 0, 0.07);
+	-webkit-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+.btn button:hover {
+  background: #2c71da;
+  color: #ffffff;
+}
