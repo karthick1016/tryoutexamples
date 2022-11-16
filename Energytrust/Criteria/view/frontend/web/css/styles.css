@@ -1,0 +1,223 @@
+h4{
+    font-weight: bold;
+    margin-top: 25px;
+    font-size: 25px;
+    text-align: center;
+}
+h6{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    /* font-family: Avenir; */
+    line-height: 1.6;
+    margin-bottom: 60px;
+}
+.poweredby{
+    border: 1px solid #eaeff2;
+    width: 100%;
+    background-color: #eaeff2;
+    height: 60px;
+}
+.powered{
+    position: relative;
+    top: 15px;
+    font-size: 12px;
+    letter-spacing: 0;
+    color: #da3732;
+    opacity:1;
+    margin: 0px 60px 0px 610px;
+}
+.wrong{
+    position: relative;
+    top: 20px;
+    margin-left: 60px;
+    font-weight: 300;
+    color: #da3732;
+    cursor: pointer;
+}
+.forms{
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 380px;
+    border-radius: 3px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    z-index: 9;
+    margin: 0px 550px 50px 0px;
+    background-color: white;
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.form-container{
+    max-height: 700px;
+    padding: 20px 60px 20px 60px;
+    overflow-y: auto;
+}
+.sticky{
+    border-top: 1px solid #d1d1d1;
+    position: sticky;
+    height: 180px;
+}
+.label{
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+#first-name,#last-name,#email,#number,#address,#state,#zip_code,#cooling,#heating,#home,#wifi,#kind,#location,#total,#rent{
+    width: 340px;
+    border-radius: 3px;
+    height: 45px;
+    background-color: #FAF8FC;
+    border: 0.5px solid #D2D2D4;
+    box-sizing: border-box;
+    margin: 5px 10px 0px 0px; 
+    color: #333333;
+    cursor: pointer;
+}
+#unit_no{
+    width: 50px;
+    border-radius: 3px;
+    padding: 20px;
+    background-color: #FAF8FC;
+    border: 0.5px solid #D2D2D4;
+    box-sizing: border-box;
+    margin: 5px 10px 0px 0px;
+}
+#city{
+    width: 270px;
+    border-radius: 3px;
+    padding: 20px;
+    background-color: #FAF8FC;
+    border: 0.5px solid #D2D2D4;
+    box-sizing: border-box;
+    margin: 5px 10px 0px 0px;
+}
+#terms{
+    width: 15px;
+    height: 15px;
+    margin-left: 160px;
+    margin-top: 30px;
+}
+.checkbox_label{
+    margin-top: 30px;
+    margin-left: 10px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.38);
+    font-weight: 400;
+}
+.btn-submit {
+    margin-left: 150px;
+    margin-top: 30px;
+    width: 200px;
+    padding: 15px 50px;
+    background: #bae4ef;
+    text-align: center;
+    border: #bae4ef;
+    color: #ffffff;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.btn-submit:hover{
+    background-color: rgba(0, 0, 0, 0.04);
+}
+.nextbutton{
+    margin-left: 100px;
+    margin-top: 30px;
+    width: 200px;
+    padding: 15px 50px;
+    text-align: center;
+    background: #fdb813;
+    border: #fdb813;
+    color: #ffffff;
+    font-size: 0.9em;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.row
+{
+    margin: 18px 0;
+    display: flex;
+}
+.right-margin {
+    margin-right: 25px;
+}
+.inline-block {
+    display: inline-block;
+}
+.astersik{  
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+#button{
+    background-image: none;
+    text-decoration: none;
+    border: 1px solid black;
+    background: #fdb813;
+    border: 1px solid #fdb813;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    box-sizing: border-box;
+    vertical-align: middle;
+    line-height: 2.2rem;
+    padding: 14px 17px;
+    font-size: 1.8rem;
+    margin-bottom: 15px; 
+    width: 15%;
+    border-radius: 3px;  
+}
+.action,.primary
+{
+        float: right;
+}  
+.progressbar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 0 4rem;
+}
+.progressbar::before
+{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    z-index: -1;
+}
+.progress-step{
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-step::before{
+    counter-increment: step;
+    content: counter(step);
+}
+.progress-step::after{
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    font-size: 0.85rem;
+    color: #666;
+}
+.progress-step-active{
+    background-color: blue;
+    color: #fff;
+}
+

@@ -1,0 +1,81 @@
+<style>
+input{
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit]
+{
+  background-color: blue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.describe
+{
+    font-weight: 600;
+}
+.astersik{  
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+.label{
+    color: black;
+    font-size: 12px;
+    font-weight:600;
+}
+</style>
+
+<h1>Customer Login</h1>
+<form action="">
+<?php
+/**
+ * @var \Create\Module1\Block\Display $block
+ */
+$value = $block->customerDropdown();
+if ($value == 'Email') {
+    ?>
+<p class="describe">If you have an account,sign in with your email address</p>
+    <label for="email" class="label">Email<span class="astersik">*</span></label>
+    <input type="email" class="elements" name="email" id="email">
+    <label for="password" class="label">Password<span class="astersik">*</span></label>
+    <input type="password" class="elements" name="password" id="password">
+<input type="submit" name="btn" id="btn" value="Sign In">
+    <?php
+} elseif ($value == 'Aadhar') {
+    ?>
+<p class="describe">If you have an account,sign in with your Aadhar</p>
+    <label for="aadhar" class="label">Aadhar<span class="astersik">*</span></label>
+
+    <input type="tel" class="elements" name="aadhar" id="aadhar">
+
+    <label for="password" class="label">Password<span class="astersik">*</span></label>
+
+    <input type="password" class="elements" name="password" id="password">
+
+    <input type="submit" name="btn" id="btn" value="Sign In">
+    <?php
+} else {
+    ?>
+<p class="describe">If you have an account,sign in with your Email and Aadhar</p>
+    <label for="email" class="label">Email<span class="astersik">*</span></label>
+    <input type="email" class="elements" name="email" id="email">
+
+    <label for="aadhar" class="label">Aadhar<span class="astersik">*</span></label>
+
+    <input type="tel" class="elements" name="aadhar" id="aadhar">
+
+    <label for="password" class="label">Password<span class="astersik">*</span></label>
+
+    <input type="password" class="elements" name="password" id="password">
+
+<input type="submit" name="btn" id="btn" value="Sign In">
+<?php  } ?>
+</form>

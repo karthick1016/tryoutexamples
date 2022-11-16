@@ -1,0 +1,35 @@
+<li id="opc-shipping_method" class="checkout-shipping-method" data-bind="fadeVisible: isVisible,attr: { id: stepCode }" role="presentation">
+    <div class="checkout-shipping-method">
+    <div class="step-title" data-bind="i18n: stepTitle" data-role="title"></div>
+        <div id="checkout-step-title" class="step-content" data-role="content">
+             <!-- <p>The customer is <span data-bind="if: !isLogedIn">not</span> Logged-in</p> -->
+            
+           <div id="checkout-step-shipping_method" class="step-content" data-role="content" role="tabpanel" aria-hidden="false">
+            <form id="co-shipping-method-form" class="form methods-shipping" data-bind="submit: navigateToNextStep" novalidate="novalidate">
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td><input type="radio"></td>
+                                <td>₹50.00</td>
+                                <td>Fixed</td>
+                                <td>Flat Rate</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button data-role="opc-continue" type="submit" class="button action continue primary">
+                            <span translate="'Next'"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+           </div>
+        </div>
+    </div>
+    
+</li>
+
+

@@ -1,0 +1,56 @@
+<style>
+
+</style>
+<?php
+
+/**
+ * @var \Create\Module1\Block\Display $block
+ */
+$helper = $this->helper('Create\Systemfield\Helper\Data');
+$value = $helper->customerDropdown();
+echo $value;
+if($value == 'Email'){
+?>
+    <p class="describe">If you have an account,sign in with your email address</p>
+    <label for="email" class="label">Email<span class="astersik">*</span></label>
+    <input type="email" class="elements" name="email" id="email">
+    <label for="password" class="label">Password<span class="astersik">*</span></label>
+    <input type="password" class="elements" name="password" id="password">
+<input type="submit" name="btn" id="btn" value="Sign In">
+<?php 
+} 
+else if($value == 'Aadhar')
+{
+?>
+<p class="describe">If you have an account,sign in with your Aadhar</p>
+    <label for="aadhar" class="label">Aadhar<span class="astersik">*</span></label>
+
+    <input type="tel" class="elements" name="aadhar" id="aadhar">
+
+    <label for="password" class="label">Password<span class="astersik">*</span></label>
+
+    <input type="password" class="elements" name="password" id="password">
+
+    <input type="submit" name="btn" id="btn" value="Sign In">
+<?php
+}
+else{
+?>
+
+<p class="describe">If you have an account,sign in with your Email and Aadhar</p>
+    <label for="email" class="label">Email<span class="astersik">*</span></label>
+    <input type="email" class="elements" name="email" id="email">
+
+    <label for="aadhar" class="label">Aadhar<span class="astersik">*</span></label>
+
+    <input type="tel" class="elements" name="aadhar" id="aadhar">
+
+    <label for="password" class="label">Password<span class="astersik">*</span></label>
+
+    <input type="password" class="elements" name="password" id="password">
+
+<input type="submit" name="btn" id="btn" value="Sign In">
+
+<?php  
+} 
+?>

@@ -1,0 +1,21 @@
+<?xml version = "1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id = "customer" translate = "label" sortOrder = "300">
+            <label>Customers</label>
+        </tab>
+        <section id="customer" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Customer Configuration</label>
+            <tab>customer</tab>
+            <resource>Magento_Customer::config_customer</resource>
+            <group id="startup" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Login Options</label>
+                <field id="customer_dropdown_custom" translate="label comment" type = "select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Login Configuration</label>
+                        <source_model>Create\Systemfield\Model\Config\Custom</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
