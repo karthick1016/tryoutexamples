@@ -1,0 +1,24 @@
+<?php
+// echo $block->getAllPrices();
+$prices = $block->getAllPrices();
+if(count($prices)>0):
+?>
+<table border="1px solid black">
+    <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Method</th>
+    </tr>
+    <?php  foreach($prices as $price):  ?>
+    <tr>
+        <td><?php echo $price->getId(); ?></td>
+        <td><?php echo $price->getFirstname(); ?></td>
+        <td><?php echo $price->getLastname(); ?></td>
+        <td><?php echo $price->getMethod(); ?></td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+<?php  else: ?>
+    <h1><?php echo "NO DATA"; ?></h1>
+<?php endif; ?>

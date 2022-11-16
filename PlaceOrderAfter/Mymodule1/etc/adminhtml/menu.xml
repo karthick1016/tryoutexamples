@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="PlaceOrderAfter_Mymodule1::menu" title = "EventTable" module = "PlaceOrderAfter_Mymodule1" sortOrder = "10" 
+        resource = "Magento_Backend::content" />    
+
+        <add id="PlaceOrderAfter_Mymodule1::menu_item" title = "TableItems" module = "PlaceOrderAfter_Mymodule1" sortOrder = "10" 
+        parent = "PlaceOrderAfter_Mymodule1::menu" action = "createmenubackend/hello/index"  resource = "PlaceOrderAfter_Mymodule1::menu_item"  />
+    </menu>
+</config>

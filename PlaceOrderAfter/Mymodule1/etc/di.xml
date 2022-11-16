@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<preference for="PlaceOrderAfter\Mymodule1\Api\HelloRepositoryInterface" type="PlaceOrderAfter\Mymodule1\Model\HelloRepository"/>
+<preference for="PlaceOrderAfter\Mymodule1\Api\Data\HelloInterface" type="PlaceOrderAfter\Mymodule1\Model\Hello"/>
+<preference for="PlaceOrderAfter\Mymodule1\Controller\Adminhtml\Hello\Delete" type="PlaceOrderAfter\Mymodule1\Model\Deleted"/>
+
+
+<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+    <arguments>
+        <argument name="collections" xsi:type="array">
+        <item name="placeafter_hello_listing_data_source" xsi:type="string">PlaceOrderAfter\Mymodule1\Model\ResourceModel\Hello\Grid\Collection</item>
+        </argument>
+    </arguments>
+</type>
+<virtualType name="PlaceOrderAfter\Mymodule1\Model\ResourceModel\Hello\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <arguments>
+        <argument name="mainTable" xsi:type="string">placeafter</argument>
+        <argument name="resourceModel" xsi:type="string">PlaceOrderAfter\Mymodule1\Model\ResourceModel\Hello</argument>
+    </arguments>
+</virtualType>
+
+<type name="PlaceOrderAfter\Mymodule1\Controller\Adminhtml\Hello\Save">
+    <plugin name = "upgrade_data_placeafter" type="PlaceOrderAfter\Mymodule1\Model\Upgrade" sortOrder="10" disabled = "false"/>
+</type>
+</config>
