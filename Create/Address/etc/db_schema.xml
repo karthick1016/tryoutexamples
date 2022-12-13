@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+   <table name = "addresss" resource="default" engine="innodb" comment="Addresss">
+      <column xsi:type="int" name="id" unsigned="true" identity="true" nullable="false" comment="Id"/>
+      <column xsi:type="varchar" name="type" nullable="false" length="255" comment="Type"/>
+      <column xsi:type="varchar" name="value" nullable="false" length="255" comment="Value"/>
+      <column xsi:type="varchar" name="place" nullable="false" length="255" comment="Place"/>
+      <column xsi:type="int" name="sort_order" nullable="false" comment="Sort_Order"/>
+      <column xsi:type="varchar" name="regex" nullable="false" length="255" comment="Regex"/>
+       <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+         </constraint>
+   </table>
+   <table name = "address_quotes" resource = "default" engine="innodb" comment="Address quotes">
+        <column xsi:type = "int" name = "id" padding = "7" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" comment="Entity ID" />
+        <column xsi:type="int" name="customer_id" unsigned="true" nullable="true" comment="Customer ID" />
+        <column xsi:type = "int" name = "address_id" unsigned="true" nullable="false" comment = "Address ID"/>
+         <column xsi:type="varchar" name="field" nullable="false" length="20" comment="Field" />
+         <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+         </constraint>
+         <constraint xsi:type="foreign" referenceId="FOREIGNKEY_ENTITY" table="address_quotes" column="entity_id" referenceTable="quote" referenceColumn="entity_id" onDelete="CASCADE" />   
+         <constraint xsi:type="foreign" referenceId="FOREIGNKEY_CUSTOMER_ID" table="address_quotes" column="customer_id" referenceTable="quote" referenceColumn="customer_id" onDelete="CASCADE" />   
+         <constraint xsi:type="foreign" referenceId="FOREIGNKEY_ADDRESS_ID" table="address_quotes" column="address_id" referenceTable="addresss" referenceColumn="id" onDelete="CASCADE" />
+   </table>
+</schema>

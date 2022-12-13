@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+     <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">address_create_form.create_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Form</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+
+     <settings>
+        <buttons>
+            <button name="save_and_continue" class="Create\Address\Block\Adminhtml\Create\Edit\SaveAndContinueButton"/>
+            <button name="save" class="Create\Address\Block\Adminhtml\Create\Edit\SaveButton"/>
+            <button name="delete" class="Create\Address\Block\Adminhtml\Create\Edit\DeleteButton"/>
+            <button name="back" class="Create\Address\Block\Adminhtml\Create\Edit\BackButton"/>
+        </buttons>
+        <namespace>address_create_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>address_create_form.create_form_data_source</dep>
+        </deps>
+    </settings>
+
+    <dataSource name="create_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+    <dataProvider name="create_form_data_source" class="Create\Address\Model\Create\DataProvider">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+
+    <fieldset name="general">
+        <settings>
+            <label>General</label>
+        </settings>
+            <field name="input" formElement="textarea" sortOrder="10">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">Create</item>
+                    </item>
+                </argument>
+            <settings>
+                <dataType>text</dataType>
+                    <label translate="true">Input</label>
+                    <dataScope>input</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">false</rule>
+                </validation>
+            </settings>
+            </field>
+            <field name="value" formElement="textarea" sortOrder="20">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">Create</item>
+                    </item>
+                </argument>
+            <settings>
+            <dataType>text</dataType>
+                <label translate="true">Label</label>
+                <dataScope>value</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">false</rule>
+                </validation>
+            </settings>
+            </field>
+            <field name="place" formElement="textarea" sortOrder="30">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">Create</item>
+                    </item>
+                </argument>
+            <settings>
+            <dataType>text</dataType>
+                <label translate="true">Identity</label>
+                <dataScope>place</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">false</rule>
+                </validation>
+            </settings>
+            </field>
+            <field name="sort_order" formElement="textarea" sortOrder="40">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">Create</item>
+                    </item>
+                </argument>
+            <settings>
+            <dataType>text</dataType>
+                <label translate="true">Sort-Order</label>
+                <dataScope>sort_order</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">false</rule>
+                </validation>
+            </settings>
+            </field>
+
+            <field name="regex" formElement="textarea" sortOrder="40">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">Create</item>
+                    </item>
+                </argument>
+            <settings>
+            <dataType>text</dataType>
+                <label translate="true">Regex</label>
+                <dataScope>regex</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">false</rule>
+                </validation>
+            </settings>
+            </field>
+    </fieldset>
+</form>
