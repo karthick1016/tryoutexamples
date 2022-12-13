@@ -1,0 +1,430 @@
+<style>
+    .information
+    {
+        box-shadow: 0px 3px 8px rgb(100,100,100);
+    }
+    .information h5{
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .detail-container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .detail-small-container{
+        width: 50%;
+        flex-direction: column;
+    }
+    .detail-small-container div{
+        color: #878787;
+        font-size: 12px; 
+        font-weight: lighter;
+        line-height: 1.57;
+        text-align: left;
+    }
+    .values{
+        margin-bottom: 10px;
+        color: #333333;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .round_button{
+        margin-left: 700px;
+        color: #CE1141;
+        font-size: 30px;
+        border: none;
+        background: none;
+    }
+    .round_button:hover{
+        border-radius: 60%;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<?php
+/**
+ * @var \Energytrust\Criteria\Block\Index $block
+ */
+
+?>
+<button id="button" >
+    <span>Verify Eligibility</span>
+</button>
+
+<div class="forms" id="myForm">        
+    <div class="poweredby">
+        <span class="powered">Powered by</span>
+        <span class="wrong" onclick="closeForm()">X</span>
+    </div>
+    <form method="POST" name = "eligibility_form" id="eligibility_form">
+        <div class="form-container">
+            <div class="heading">
+                <h4>Fill out the information below to verify your account.</h4>
+                <h6>Fields indicated with a (<span style="color: red; font-weight:bold;">*</span>) are required. 
+                Information below must match your utility account.</h6>
+            </div>
+            
+            <div class="row">
+                <div class="inline-block right-margin">
+                    <div class="label">Primary Account Holder First Name<span class="astersik">*</span></div>
+                    <input type="text" class="elements" name="first-name" id="first-name" required/>
+                </div>
+                <div class="inline-block responsive">
+                    <div class="label">Primary Account Holder Last Name<span class="astersik">*</span></div>
+                    <input type="text" class="elements" name="last-name" id="last-name" required/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="inline-block right-margin">
+                    <div class="label">Email Address<span class="astersik">*</span></div>
+                    <input type="email" class="elements" name="email" id="email" required/>
+                </div>
+                <div class="inline-block responsive">
+                    <div class="label">Phone Number<span class="astersik">*</span></div>
+                    <input type="text" class="elements" name="number" id="number" required/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="inline-block right-margin">
+                    <div class="label">Installation Address (purchase will be shipped here)
+                        <span class="astersik">*</span></div>
+                    <input type="text" class="elements" name="address" id="address" required/>
+                </div>
+
+                <div class="inline-block responsive">
+                    <div class="label">Unit No.</div>
+                    <input type="number" class="elements" name="unit_no" id="unit_no" />
+                </div>
+
+                <div class="inline-block responsive">
+                    <div class="label">City<span class="astersik">*</span></div>
+                    <input type="text" class="elements" name="city" id="city" required/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="inline-block right-margin">
+                    <div class="label">State<span class="astersik">*</span></div>
+                    <input type="text" class="elements" name="state" id="state" required/>
+                </div>
+                <div class="inline-block responsive">
+                        <div class="label">Zip Code<span class="astersik">*</span></div>
+                        <input type="tel" class="elements" name="zip_code" id="zip_code" required/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="inline-block right-margin">
+                    <div class="label">Cooling System Type<span class="astersik">*</span></div>
+                    <select name="cooling" id="cooling" required>
+                        <option value="" selected>--Please Select--</option>
+                        <option value="ductless heat pump">Ductless heat pump</option>
+                        <option value="heat pump">Heat pump</option>
+                        <option value="Central AC">Central AC</option>
+                        <option value="Fixed Window AC">Fixed Window AC</option>
+                        <option value="Portable AC">Portable AC</option>
+                        <option value="None">None</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="inline-block responsive">
+                    <div class="label">Heating System Type<span class="astersik">*</span></div>
+                    <select name="heating" id="heating" required>
+                        <option value="none" selected>--Please Select--</option>
+                        <option value="Gas Furnace">Gas Furnace</option>
+                        <option value="Electric Furnace">Electric Furnace</option>
+                        <option value="Heat Pump">Heat Pump</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="inline-block right-margin">
+                    <div class="label">What kind of home do you live in?<span class="astersik">*</span></div>
+                    <select name="home" id="home" required>
+                        <option value="">--Please Select--</option>
+                        <option value="Single-family home">Single-family home</option>
+                        <option value="Manufactured home">Manufactured home</option>
+                        <option value="Multifamily home">Multifamily home</option>
+                    </select>
+                </div>
+
+                <div class="inline-block responsive">
+                    <div class="label">Do you have Wi-Fi in your home?<span class="astersik">*</span></div>
+                    <select name="wifi" id="wifi" required>
+                        <option value="">--Please Select--</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="inline-block right-margin">
+                    <div class="label">Which kind of thermostat are you replacing?<span class="astersik">*</span></div>
+                    <select name="kind" id="kind" required>
+                        <option value="">--Please Select--</option>
+                        <option value="Manual">Manual</option>
+                        <option value="Programmable">Programmable</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="inline-block responsive">
+                    <div class="label">Where is your existing thermostat located?<span class="astersik">*</span></div>
+                    <select name="location" id="location" required>
+                        <option value="">--Please Select--</option>
+                        <option value="Living Room">Living Room</option>
+                        <option value="Dining Room">Dining Room</option>
+                        <option value="BedRoom">BedRoom</option>
+                        <option value="Basement">Basement</option>
+                        <option value="Hailway">Hailway</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="inline-block right-margin">
+                    <div class="label">How many total thermostats do you have in your home?
+                        <span class="astersik">*</span></div>
+                    <input type="number" class="elements" name="total" id="total" required/>
+                </div>
+
+                <div class="inline-block responsive">
+                    <div class="label">Do you own or rent your home?<span class="astersik">*</span></div>
+                    <select name="rent" id="rent" required>
+                        <option value="">--Please Select--</option>
+                        <option value="Own">Own</option>
+                        <option value="Rent">Rent</option>
+                    </select>
+                </div>
+            </div>
+        
+        </div>
+        <div class="sticky">
+            <div class="row">
+                <input type="checkbox" name="terms" id="terms">
+                <div class="checkbox_label">I have read, understood and agree to the 
+                    <strong>Terms and Conditions.</strong></div>
+            </div>
+            <div class="row">
+                <button name="button" class="btn-submit" id="backbutton" onclick="closeForm()">Back</button>
+                <button name="nextbutton" class="nextbutton" id = "nextbutton"  
+                onclick="nextTab()"><span><?= 'Next' ?></span></button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--TAB 2 -->
+
+<div class="forms" id="newForm">
+    <div class="poweredby">
+        <span class="powered">Powered by</span>
+        <span class="wrong" onclick="closeForm()">X</span>
+    </div>
+    <div class="form-container">
+        <!-- <div class="progressbar">
+            <div class="progress-step progress-step-active" data-title="Account Details"></div>
+            <div class="progress-step" data-title="Summary"></div>
+        </div> -->
+        <div class="heading">
+            <h4>Review the information below.</h4>
+            <?php
+            
+             $firstName = $block->firstName();
+             $lastName = $block->lastName();
+             $email = $block->lastEmail();
+             $number = $block->lastNumber();
+             $address = $block->lastAddress();
+             $city = $block->lastCity();
+             $state = $block->lastState();
+             $zipCode = $block->lastZipCode();
+             $cooling = $block->lastCooling();
+             $heating = $block->lastHeating();
+             $familyType = $block->lastFamily();
+             $wifi = $block->lastWifi();
+             $thermostat = $block->lastThermostat();
+             $location = $block->lastLocation();
+             $total = $block->lastTotal();
+             $homeType = $block->lastHomeType();
+            ?>
+        </div>
+        
+        <div class="information">
+            <h5>Account Details</h5>
+            <button class="round_button" id="flip">-</button>
+            <div class="detail-container" id = "panel">
+                <div class="detail-small-container">
+                    <p><div>Primary Account Holder First Name <span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="first_name"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>Primary Account Holder Last Name<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="last_name"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>Email Address<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="user_email"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>Phone Number<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="user_number"></p>
+                </div>
+                <div class="detail-small-container">
+                <p><div>Installation Address<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="user_address"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>City<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="user_city"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>State<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="user_state"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>Zip Code<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="user_zipcode"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>Cooling System Type<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="home_cooling"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>Heating System Type<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="home_heating"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>Kind of Home<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="home_kind"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>Wifi In Home<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="home_wifi"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>Thermostat Replacing<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="home_thermostat"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>Thermostat Located<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="home_location"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>Number of Thermostats<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="home_total"></p>
+                </div>
+                <div class="detail-small-container">
+                    <p><div>Own or Rend<span style="font-size: 14px;">*</span></div></p>
+                    <p class="values" id="home_type"></p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        <div class="sticky">
+            <div class="row">
+                <button name="button" class="btn-submit" id="backbutton" onclick="backTab()">Back</button>
+                <button name="nextbutton" class="nextbutton" id = "subutton" type="submit" onclick="closeForm()"><span><?= 'Submit' ?></span></button>
+            </div>
+        </div>
+</div>
+
+<script>
+     const element=document.getElementById('button');
+     element.addEventListener('click',openForm);
+
+    function openForm()
+    {
+        document.getElementById('myForm').style.display = "block";
+    }
+    function closeForm()
+    {
+        document.getElementById('myForm').style.display = "none";
+        document.getElementById('newForm').style.display = "none";
+    }
+
+    function nextTab(){
+        document.getElementById('myForm').style.display = "none";
+        document.getElementById('newForm').style.display = "block";
+    }
+
+    function backTab(){
+        document.getElementById('myForm').style.display = "block";
+        document.getElementById('newForm').style.display = "none";
+    }
+
+    //Toggle
+    $(document).ready(function(){
+        $('#flip').click(function(){
+            $('#panel').slideToggle("slow");
+        });
+    });
+
+    //Values return
+    require([
+        "jquery",
+        "mage/mage"
+    ],function($){
+        $(document).ready(function(){
+            $('#eligibility_form').mage(
+                'validation',
+                {
+                    submitHandler:function(form){
+                        var customUrl = "<?php echo $this->getUrl().'criteria/index/save'?>";
+                        $.ajax({
+                            url:customUrl,
+                            data: $('#eligibility_form').serialize(),
+                            type: 'POST',
+                            dataType: 'json',
+                            showLoader: true,
+                            cache: false,
+                            success: function(data, status, xhr) {
+                                $('#first_name').append(data.firstname);
+                                $('#last_name').append(data.lastname);
+                                $('#user_email').append(data.email);
+                                $('#user_number').append(data.number);
+                                $('#user_address').append(data.address);
+                                $('#user_city').append(data.city);
+                                $('#user_state').append(data.state);
+                                $('#user_zipcode').append(data.zipcode);
+                                $('#home_cooling').append(data.cooling_system_type);
+                                $('#home_heating').append(data.heating_system_type);
+                                $('#home_kind').append(data.family_type);
+                                $('#home_wifi').append(data.wifi);
+                                $('#home_thermostat').append(data.thermostat);
+                                $('#home_location').append(data.location);
+                                $('home_total').append(data.total);
+                                $('home_type').append(data.home_type);
+                            },
+                            error: function (xhr, status, errorThrown) {
+                                console.log('Error happens. Try again.');
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                }
+            );
+        });
+    });
+
+
+    // button disable
+    const btn = document.getElementById('nextbutton');
+    const firstName = document.getElementById('first-name');
+    btn.disabled = true;
+    firstName.addEventListener('keyup',(e)=>{
+        const value = e.currentTarget.value;
+        console.log(value);
+        btn.disabled=false;
+
+        if(value==="")
+        {
+            btn.disabled=true;
+        }
+    })
+</script>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<head>
+        <css src="Energytrust_Criteria::css/styles.css"/>
+</head>
+    <body>
+        <referenceBlock name="product.info.addtocart" template="Energytrust_Criteria::catalog/product/view/addtocart.phtml"/>
+        <referenceBlock name="product.info.addtocart.additional" template="Energytrust_Criteria::catalog/product/view/addtocart.phtml"/>
+
+        <referenceContainer name="content">
+            <block class="Energytrust\Criteria\Block\Index" name="custom-form-popup" template="Energytrust_Criteria::custombutton.phtml" />
+        </referenceContainer>
+    </body>
+</page>
